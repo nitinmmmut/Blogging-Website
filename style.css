@@ -1,0 +1,204 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color:#1E1E1E;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    background-color: #111111;
+
+}
+
+.navbar h1{
+  
+    width: 198px;
+    height: 29px;
+    left: 33px;
+    top: 27px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    font-family: sans-serif;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    }
+
+#addbtn {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.addmore-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+
+}
+
+.addmore-box .addmore {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.addmore-box,
+.addmore {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.addmore-box.show,
+.addmore-box.show .addmore {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.addmore-box.show .addmore {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.addmore .content {
+    border-radius: 5px;
+    background: #fff;
+    width: calc(100% - 15px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.content header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content header p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header i {
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+}
+
+.content form .row {
+    margin-bottom: 20px;
+}
+
+form .row label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+form :where(input, textarea) {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+form :where(input, textarea):focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+}
+
+form .row textarea {
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+.buton {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+}
+
+form button {
+    width: 21%;
+    height: 50px;
+    color: black;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid black;
+    margin: 2px;
+    margin-bottom: 10px;
+}
+
+.add-box {
+    background-color: black;
+}
+
+.note {
+
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 97%;
+    height: 200px;
+    border: 1px solid white;
+    margin: 18px;
+    padding: 10px;
+}
+
+.note .details {
+    max-height: 365px;
+    overflow-y: auto;
+}
+
+@media (max-width: 660px) {
+    .add-box {
+        margin: 15px;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+
+    .addmore-box .addmore {
+        max-width: calc(100% - 15px);
+    }
+
+    .bottom-content .settings i {
+        font-size: 17px;
+    }
+}
